@@ -2,13 +2,13 @@
     <div id="spec">
       <h2 li>{{weaponspec.name_weapon | uppercase}} spec</h2>
       <ul>
-        <li>ATK1 PP Rec: {{(Recovery() * weaponspec.atk1_rest)}} Frames: {{weaponspec.atk1_frames}}</li>
-        <li>ATK2 PP Rec: {{Recovery() * weaponspec.atk2_rest}} Frames: {{weaponspec.atk2_frames}}</li>
-        <li>ATK3 PP Rec: {{Recovery() * weaponspec.atk3_rest}} Frames: {{weaponspec.atk3_frames}}</li>
-        <li>Ave ATK Rec: {{mod_weapon_atkpp() | number:'.2-2'}}</li>
-        <li>PP Reg: {{mod_weapon_atkpp() | number:'.2-2'}}</li>
-        <li>PP Rec / Frame: {{(mod_weapon_atkpp() + mod_common_regen())| number:'.2-2'}}</li>
-        <li>Frames / PP Rec: {{(1/(mod_weapon_atkpp() + mod_common_regen())) | number:'.2-2'}}</li>
+        <li>ATK1 PP Rec: {{Recovery() * weaponspec.atk1_rest | number:'.2-2'}} Frames: {{weaponspec.atk1_frames}}</li>
+        <li>ATK2 PP Rec: {{Recovery() * weaponspec.atk2_rest | number:'.2-2'}} Frames: {{weaponspec.atk2_frames}}</li>
+        <li>ATK3 PP Rec: {{Recovery() * weaponspec.atk3_rest | number:'.2-2'}} Frames: {{weaponspec.atk3_frames}}</li>
+        <li>Ave ATK Rec(per Frame): {{mod_weapon_atkpp() | number:'.2-2'}}</li>
+        <li>PP Reg(per Frame): {{mod_common_regen() | number:'.2-2'}}</li>
+        <li>PP per Frame: {{(mod_weapon_atkpp() + mod_common_regen()) | number:'.2-2'}}</li>
+        <li>Frames per PP: {{(1/(mod_weapon_atkpp() + mod_common_regen())) | number:'.2-2'}}</li>
       </ul>
     </div>
     <div id="option">

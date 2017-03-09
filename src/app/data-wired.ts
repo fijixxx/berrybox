@@ -13,5 +13,5 @@ export const WIREDS: Weapon[] = [
   { name_photonart: 'ワイルドラウンド', damage: 1538, consumption: 28, frames: 123},
 ];
 export const WIREDSPEC: Weaponspec = {
-  name_weapon: 'Wired Lances', atk1_rest: 9, atk1_frames: 48, atk2_rest: 9, atk2_frames: 40, atk3_rest: 10, atk3_frames: 52, reg: 5
+  name_weapon: 'Wired Lances', atk1_rest: 7, atk1_frames: 48, atk2_rest: 10, atk2_frames: 40, atk3_rest: 11, atk3_frames: 52, reg: 5
 };
