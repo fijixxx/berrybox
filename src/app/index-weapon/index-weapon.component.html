@@ -1,0 +1,14 @@
+<md-radio-group>
+<ul>
+    <li *ngFor="let index_weapon of index_weapons"
+        [class.selected]="index_weapon === selectedWeapon"
+        (click)="onSelect(index_weapon)">
+      <md-radio-button [value]="index_weapon[1].name_weapon">
+       {{index_weapon[1].name_weapon}}
+      </md-radio-button>
+    </li>
+</ul>
+</md-radio-group>
+<div *ngIf="selectedWeapon">
+  <app-detail-weapon [weapons]="selectedWeapon[0]" [weaponspec]="selectedWeapon[1]"></app-detail-weapon>
+</div>

@@ -1,69 +1,7 @@
 <h1>
   {{title}}
 </h1>
-<div>
-  <md-slide-toggle [(ngModel)]="detail">
-    Sword
-  </md-slide-toggle>
-</div>
-<ul>
-  <div *ngIf="detail" class="content">
-    <div id="spec">
-      <h2 li>SWORD spec</h2>
-      <ul>
-        <li>ATK1 PP Rec: {{(Recovery() * swordspec.atk1_rest)}} Frames: {{swordspec.atk1_frames}}</li>
-        <li>ATK2 PP Rec: {{Recovery() * swordspec.atk2_rest}} Frames: {{swordspec.atk2_frames}}</li>
-        <li>ATK3 PP Rec: {{Recovery() * swordspec.atk3_rest}} Frames: {{swordspec.atk3_frames}}</li>
-        <li>Ave ATK Rec: {{mod_sword_atkpp() | number:'.2-2'}}</li>
-        <li>PP Reg: {{mod_common_regen() | number:'.2-2'}}</li>
-        <li>PP Rec / Frame: {{(mod_sword_atkpp() + mod_common_regen())| number:'.2-2'}}</li>
-        <li>Frames / PP Rec: {{(1/(mod_sword_atkpp() + mod_common_regen())) | number:'.2-2'}}</li>
-      </ul>
-    </div>
-    <div id="option">
-      <h2 li>OPTION</h2>
-        <ul>
-            <li>
-              <md-input-container>
-                <input mdInput placeholder="Recovery UP: (%)" [(ngModel)]="recup">
-              </md-input-container>
-            </li>
-            <li>
-              <md-input-container>
-                <input mdInput placeholder="Regeneration UP: (%)" [(ngModel)]="regup">
-              </md-input-container>
-            </li>
-            <li>
-              <md-input-container>
-                <input mdInput placeholder="LESS Consumption: (%)" [(ngModel)]="lesscon">
-              </md-input-container>
-            </li>
-        </ul>
-    </div>
-    <li *ngFor="let sword of swords">
-      <ul>
-        <h2><li>PA name：{{sword.name_photonart}}</li></h2>
-        <li>Consumption: {{(sword.consumption)}} modified <span style="font-weight: 700">{{(Consum() * sword.consumption) | number:'.2-2'}}</span></li>
-        <li>Damage：{{sword.damage}}</li>
-        <li>Frames：{{sword.frames}}</li>
-        <li>Net DPS: {{(sword.damage/sword.frames*60) | number:'.2-2'}}</li>
-        <li>Gross DPS: {{(sword.damage/(sword.frames+sword.consumption * (1/(sword_atkpp() + common_regen()))) * 60 ) | number:'.2-2'}} modified
-          <span style="font-weight: 700">{{(sword.damage/(sword.frames+Consum() * sword.consumption * (1/(mod_sword_atkpp() + mod_common_regen()))) * 60) | number:'.2-2'}}
-            |
-            <md-chip color="primary"selected="true">
-              {{((((sword.damage/(sword.frames+Consum() * sword.consumption * (1/(mod_sword_atkpp() + mod_common_regen()))) * 60) - (sword.damage/(sword.frames+sword.consumption * (1/(sword_atkpp() + common_regen()))) * 60 )) / (sword.damage/(sword.frames+sword.consumption * (1/(sword_atkpp() + common_regen()))) * 60 )) * 100 ) | number:'.2-2'}} % Damage UP!!
-            </md-chip>
-          </span>
-        </li>
-      </ul>
-    </li>
-    <div>
-      <md-slide-toggle [(ngModel)]="detail">
-        Sword
-      </md-slide-toggle>
-    </div>
-  </div>
-</ul>
+<app-index-weapon></app-index-weapon>
 <div id="cp">
   © 2017-2017　<a style="text-decoration: none; color: black;" href="//cy-i-wc.com/blog/">catch you if we can</a>
 </div>

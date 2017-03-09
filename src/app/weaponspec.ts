@@ -1,4 +1,5 @@
 export class Weaponspec {
+  name_weapon: string;
   atk1_rest: number;
   atk1_frames: number;
   atk2_rest: number;

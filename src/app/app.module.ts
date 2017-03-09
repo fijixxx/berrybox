@@ -7,10 +7,14 @@ import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
+import { IndexWeaponComponent } from './index-weapon/index-weapon.component';
+import { DetailWeaponComponent } from './detail-weapon/detail-weapon.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    IndexWeaponComponent,
+    DetailWeaponComponent
   ],
   imports: [
     BrowserModule,
