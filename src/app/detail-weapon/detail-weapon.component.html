@@ -33,10 +33,7 @@
     </div>
     <li *ngFor="let weapon of weapons">
       <ul>
-        <h2><li>PA name：{{weapon.name_photonart}}</li></h2>
-        <li>Consumption: {{(weapon.consumption)}} modified <span style="font-weight: 700">{{(Consum() * weapon.consumption) | number:'.2-2'}}</span></li>
-        <li>Damage：{{weapon.damage}}</li>
-        <li>Frames：{{weapon.frames}}</li>
+        <h2><li>{{weapon.name_photonart}}</li></h2>
         <li>Net DPS: {{(weapon.damage/weapon.frames*60) | number:'.2-2'}}</li>
         <li>Gross DPS: {{(weapon.damage/(weapon.frames+weapon.consumption * (1/(weapon_atkpp() + common_regen()))) * 60 ) | number:'.2-2'}} modified
           <span style="font-weight: 700">{{(weapon.damage/(weapon.frames+Consum() * weapon.consumption * (1/(mod_weapon_atkpp() + mod_common_regen()))) * 60) | number:'.2-2'}}
@@ -46,6 +43,9 @@
             </md-chip>
           </span>
         </li>
+        <li>Damage：{{weapon.damage | number:'.2-2'}}</li>
+        <li>Frames：{{weapon.frames}}</li>
+        <li>Consumption: {{(weapon.consumption)}} modified <span style="font-weight: 700">{{(Consum() * weapon.consumption) | number:'.2-2'}}</span></li>
       </ul>
     </li>
 </ul>
