@@ -20,5 +20,5 @@ export const KATANAS: Weapon[] = [
   { name_photonart: 'サクラ零 + ゲッカ', damage: (1255 + 125) * 0.45 + (1255 + 125) * 0.55 * 1.1 + 825, consumption: 25 + 15, frames: 52 + 22},
 ];
 export const KATANASPEC: Weaponspec = {
-  name_weapon: 'Katana', atk1_rest: 6, atk1_frames: 24, atk2_rest: 6, atk2_frames: 24, atk3_rest: 12, atk3_frames: 36, reg: 5
+  name_weapon: 'Katana', atk1_rest: 6, atk1_frames: 24, atk1_hitcount: 1, atk2_rest: 6, atk2_frames: 24, atk2_hitcount: 1, atk3_rest: 12, atk3_frames: 36, atk3_hitcount: 2
 };

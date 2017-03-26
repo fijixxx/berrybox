@@ -17,5 +17,5 @@ export const SWORDS: Weapon[] = [
   { name_photonart: 'JGイグナイトパリング', damage: 1534 * (0.3 + 0.1 * 3 + 0.7 * 2), consumption: 15, frames: 160},
 ];
 export const SWORDSPEC: Weaponspec = {
-  name_weapon: 'Sword', atk1_rest: 9, atk1_frames: 48, atk2_rest: 9, atk2_frames: 40, atk3_rest: 10, atk3_frames: 52, reg: 5
+  name_weapon: 'Sword', atk1_rest: 9, atk1_frames: 48, atk1_hitcount: 1, atk2_rest: 9, atk2_frames: 40, atk2_hitcount: 1, atk3_rest: 10, atk3_frames: 52, atk3_hitcount: 1
 };

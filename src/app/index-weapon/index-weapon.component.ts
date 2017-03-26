@@ -9,6 +9,7 @@ import { GSS, GSSPEC } from "../data-gs";
 import { KATANAS, KATANASPEC } from "../data-katana";
 import { DBS, DBSPEC } from "../data-db";
 import {JBS, JBSPEC} from "../data-jb";
+import { TMGS, TMGSPEC } from "../data-tmg";
 
 @Component({
   selector: 'app-index-weapon',
@@ -28,6 +29,7 @@ export class IndexWeaponComponent {
   index_katana = [KATANAS, KATANASPEC];
   index_db = [DBS, DBSPEC];
   index_jb = [JBS, JBSPEC];
+  index_tmg = [TMGS, TMGSPEC];
 
   //ngFor 用に↑をまとめる
   index_weapons = [
@@ -40,7 +42,8 @@ export class IndexWeaponComponent {
     this.index_gs,
     this.index_katana,
     this.index_db,
-    this.index_jb
+    this.index_jb,
+    this.index_tmg
   ];
 
   //detail 表示用

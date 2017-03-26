@@ -25,5 +25,5 @@ export const DBS: Weapon[] = [
   { name_photonart: 'キャンセルランペ零(ギア3補正込) + ステアタ + ヘブンリーカイト', damage: (2384 + 238) * 2.5 + 1273, consumption: 40 - 4 - 4 + 25, frames: 162 + 46 + 71},
 ];
 export const DBSPEC: Weaponspec = {
-  name_weapon: 'Dual Blades', atk1_rest: 7, atk1_frames: 21, atk2_rest: 8, atk2_frames: 19, atk3_rest: 20, atk3_frames: 33, reg: 5
+  name_weapon: 'Dual Blades', atk1_rest: 7, atk1_frames: 21, atk1_hitcount: 1, atk2_rest: 8, atk2_frames: 19, atk2_hitcount: 1, atk3_rest: 20, atk3_frames: 33, atk3_hitcount: 2
 };

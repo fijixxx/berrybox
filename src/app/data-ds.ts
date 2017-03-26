@@ -16,5 +16,5 @@ export const DSS: Weapon[] = [
   { name_photonart: 'ハリケーンセンダー', damage: 673 * (0.3 + 1.1), consumption: 25, frames: 42 + 18}
 ];
 export const DSSPEC: Weaponspec = {
-  name_weapon: 'Double Sabers', atk1_rest: 4, atk1_frames: 34, atk2_rest: 6, atk2_frames: 31, atk3_rest: 27, atk3_frames: 50, reg: 5
+  name_weapon: 'Double Sabers', atk1_rest: 4, atk1_frames: 34, atk1_hitcount: 2, atk2_rest: 6, atk2_frames: 31, atk2_hitcount: 2, atk3_rest: 27, atk3_frames: 50, atk3_hitcount: 3
 };

@@ -14,5 +14,5 @@ export const PARTIS: Weapon[] = [
   { name_photonart: 'セイクリッドスキュア零式', damage: (1153 + 115) / 1.1 * 1.2, consumption: 30, frames: 61 + 52},
 ];
 export const PARTISPEC: Weaponspec = {
-  name_weapon: 'Partizan', atk1_rest: 6, atk1_frames: 34, atk2_rest: 6, atk2_frames: 32, atk3_rest: 9, atk3_frames: 30, reg: 5
+  name_weapon: 'Partizan', atk1_rest: 6, atk1_frames: 34, atk1_hitcount: 1, atk2_rest: 6, atk2_frames: 32, atk2_hitcount: 1, atk3_rest: 9, atk3_frames: 30, atk3_hitcount: 1
 };

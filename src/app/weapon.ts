@@ -4,4 +4,3 @@ export class Weapon {
   consumption: number;
   frames: number;
 }
-

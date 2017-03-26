@@ -10,5 +10,5 @@ export const JBS: Weapon[] = [
   { name_photonart: 'ヴィントジーカー(派生ギア3)', damage: 4427, consumption: 35, frames: 132},
 ];
 export const JBSPEC: Weaponspec = {
-  name_weapon: 'Jet Boots', atk1_rest: 5, atk1_frames: 24, atk2_rest: 12, atk2_frames: 24, atk3_rest: 9, atk3_frames: 36, reg: 5
+  name_weapon: 'Jet Boots', atk1_rest: 5, atk1_frames: 24, atk1_hitcount:1 ,atk2_rest: 12, atk2_frames: 24, atk2_hitcount: 2, atk3_rest: 9, atk3_frames: 36, atk3_hitcount: 1
 };

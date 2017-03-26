@@ -21,5 +21,5 @@ export const KNUCKLESS: Weapon[] = [
   { name_photonart: 'ハートレスインパクト', damage: 629, consumption: 25, frames: 36},
 ];
 export const KNUCKLESSPEC: Weaponspec = {
-  name_weapon: 'Knuckels', atk1_rest: 5, atk1_frames: 20, atk2_rest: 6, atk2_frames: 26, atk3_rest: 10, atk3_frames: 24, reg: 5
+  name_weapon: 'Knuckels', atk1_rest: 5, atk1_frames: 20, atk1_hitcount: 1, atk2_rest: 6, atk2_frames: 26, atk2_hitcount: 1, atk3_rest: 10, atk3_frames: 24, atk3_hitcount: 1
 };

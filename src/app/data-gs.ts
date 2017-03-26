@@ -19,5 +19,5 @@ export const GSS: Weapon[] = [
   { name_photonart: 'シュトレツヴァイ(派生)', damage: 1826.4, consumption: 35, frames: 111},
 ];
 export const GSSPEC: Weaponspec = {
-  name_weapon: 'Gunslash', atk1_rest: 5, atk1_frames: 21, atk2_rest: 6, atk2_frames: 25, atk3_rest: 9, atk3_frames: 14, reg: 5
+  name_weapon: 'Gunslash', atk1_rest: 5, atk1_frames: 21, atk1_hitcount:1 , atk2_rest: 6, atk2_frames: 25, atk2_hitcount: 1, atk3_rest: 9, atk3_frames: 14, atk3_hitcount: 1
 };
