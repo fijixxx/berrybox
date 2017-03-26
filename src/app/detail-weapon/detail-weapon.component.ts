@@ -21,7 +21,7 @@ export class DetailWeaponComponent {
   ATK_Frames = () => this.weaponspec.atk1_frames + this.weaponspec.atk2_frames + this.weaponspec.atk3_frames;
 
   //基本のPP per Frames
-  PPpF_base = () => this.ATK_Rec_base() / this.ATK_Frames();
+  PPpF_base = () => this.Regene_base() + this.ATK_Rec_base() / this.ATK_Frames();
 
     //基本のFrame per PP を計算
   FpPP_base = () => 1 / this.PPpF_base();
@@ -80,10 +80,10 @@ export class DetailWeaponComponent {
   };
 
   //PPpFを計算
-  PPpF_mod = () => this.atk_rec_gross + this.regene_mod;
+  PPpF_mod = (HitCount1:number, HitCount2:number, HitCount3:number) => this.ATK_Rec_gross(HitCount1, HitCount2, HitCount3) + this.Regene_mod();
 
   //FpPPを計算
-  FpPP_mod = () => 1 / this.PPpF_mod();
+  FpPP_mod = (HitCount1:number, HitCount2:number ,HitCount3:number) => 1 / this.PPpF_mod(HitCount1, HitCount2, HitCount3);
 
   //PAのPP消費量を計算
   Consumption = (index:number) => this.Consum_rate() * this.weapons[index].consumption;
@@ -95,11 +95,9 @@ export class DetailWeaponComponent {
   grossDPS_base = (index:number) => this.weapons[index].damage / (this.weapons[index].frames + this.weapons[index].consumption * this.FpPP_base()) * 60;
 
   //総DPSを計算
-  grossDPS_mod = (index:number) => this.weapons[index].damage / (this.weapons[index].frames + this.weapons[index].consumption * this.FpPP_base()) * 60;
+  grossDPS_mod = (index:number, HitCount1:number, HitCount2:number, HitCount3:number) => this.weapons[index].damage / (this.weapons[index].frames + this.Consumption(index) * this.FpPP_mod(HitCount1, HitCount2, HitCount3)) * 60;
 
-
-
-
-  // aaa = () => Object.keys(this.weapons).length - 1;
+  //総DPSの上昇率を計算
+  Up_rate_grossDPS = (index:number, HitCount1, HitCount2, HitCount3) => (this.grossDPS_mod(index, HitCount1, HitCount2, HitCount3) - this.grossDPS_base(index)) / this.grossDPS_base(index) * 100;
 
 }

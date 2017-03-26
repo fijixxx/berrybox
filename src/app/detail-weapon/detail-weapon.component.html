@@ -7,8 +7,8 @@
       <li>ATK3 PP Rec: {{ATK_Rec(weaponspec.atk3_rest, weaponspec.atk3_hitcount) | number:'.2-2'}} Frames: {{weaponspec.atk3_frames}}</li>
       <li>Ave ATK Rec(per Frame): {{ATK_Rec_gross(weaponspec.atk1_hitcount, weaponspec.atk2_hitcount, weaponspec.atk3_hitcount) | number:'.2-2'}}</li>
       <li>PP Reg(per Frame): {{Regene_mod() | number:'.2-2'}}</li>
-      <li>PP per Frame: {{PPpF_mod() | number:'.2-2'}}</li>
-      <li>Frames per PP: {{FpPP_mod() | number:'.2-2'}}</li>
+      <li>PP per Frame: {{PPpF_mod(weaponspec.atk1_hitcount, weaponspec.atk2_hitcount, weaponspec.atk3_hitcount) | number:'.2-2'}}</li>
+      <li>Frames per PP: {{FpPP_mod(weaponspec.atk1_hitcount, weaponspec.atk2_hitcount, weaponspec.atk3_hitcount) | number:'.2-2'}}</li>
     </ul>
   </div>
   <div id="option">
@@ -44,10 +44,10 @@
       <li>Frames：{{weapon.frames}}</li>
       <li>Net DPS: {{netDPS(idx) | number:'.2-2'}}</li>
       <li>Gross DPS: {{grossDPS_base(idx) | number:'.2-2'}} modified
-        <span style="font-weight: 700">{{grossDPS_mod(idx) | number:'.2-2'}}
-            |
+        <span style="font-weight: 700">{{grossDPS_mod(idx, weaponspec.atk1_hitcount, weaponspec.atk2_hitcount, weaponspec.atk3_hitcount) | number:'.2-2'}}
+           -
             <md-chip color="primary"selected="true">
-              {{1 | number:'.2-2'}} % Damage UP!!
+              {{Up_rate_grossDPS(idx, weaponspec.atk1_hitcount, weaponspec.atk2_hitcount, weaponspec.atk3_hitcount) | number:'.2-2'}} % Damage UP
             </md-chip>
           </span>
       </li>
