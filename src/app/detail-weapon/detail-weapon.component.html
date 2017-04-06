@@ -1,18 +1,32 @@
 <ul>
   <div id="spec">
-    <h2 li>{{weaponspec.name_weapon | uppercase}} spec</h2>
-    <ul>
-      <li>ATK1 PP Rec: {{ATK_Rec(weaponspec.atk1_rest, weaponspec.atk1_hitcount) | number:'.2-2'}} Frames: {{weaponspec.atk1_frames}}</li>
-      <li>ATK2 PP Rec: {{ATK_Rec(weaponspec.atk2_rest, weaponspec.atk2_hitcount) | number:'.2-2'}} Frames: {{weaponspec.atk2_frames}}</li>
-      <li>ATK3 PP Rec: {{ATK_Rec(weaponspec.atk3_rest, weaponspec.atk3_hitcount) | number:'.2-2'}} Frames: {{weaponspec.atk3_frames}}</li>
-      <li>Ave ATK Rec(per Frame): {{ATK_Rec_gross(weaponspec.atk1_hitcount, weaponspec.atk2_hitcount, weaponspec.atk3_hitcount) | number:'.2-2'}}</li>
-      <li>PP Reg(per Frame): {{Regene_mod() | number:'.2-2'}}</li>
-      <li>PP per Frame: {{PPpF_mod(weaponspec.atk1_hitcount, weaponspec.atk2_hitcount, weaponspec.atk3_hitcount) | number:'.2-2'}}</li>
-      <li>Frames per PP: {{FpPP_mod(weaponspec.atk1_hitcount, weaponspec.atk2_hitcount, weaponspec.atk3_hitcount) | number:'.2-2'}}</li>
-    </ul>
+  <md-card>
+  <md-card-header>
+    <md-card-title>
+      <h2 li>{{weaponspec.name_weapon | uppercase}} spec</h2>
+    </md-card-title>
+  </md-card-header>
+    <md-card-content>
+      <ul>
+        <li>ATK1 PP Rec: {{ATK_Rec(weaponspec.atk1_rest, weaponspec.atk1_hitcount) | number:'.2-2'}} Frames: {{weaponspec.atk1_frames}}</li>
+        <li>ATK2 PP Rec: {{ATK_Rec(weaponspec.atk2_rest, weaponspec.atk2_hitcount) | number:'.2-2'}} Frames: {{weaponspec.atk2_frames}}</li>
+        <li>ATK3 PP Rec: {{ATK_Rec(weaponspec.atk3_rest, weaponspec.atk3_hitcount) | number:'.2-2'}} Frames: {{weaponspec.atk3_frames}}</li>
+        <li>Ave ATK Rec(per Frame): {{ATK_Rec_gross(weaponspec.atk1_hitcount, weaponspec.atk2_hitcount, weaponspec.atk3_hitcount) | number:'.2-2'}}</li>
+        <li>PP Reg(per Frame): {{Regene_mod() | number:'.2-2'}}</li>
+        <li>PP per Frame: {{PPpF_mod(weaponspec.atk1_hitcount, weaponspec.atk2_hitcount, weaponspec.atk3_hitcount) | number:'.2-2'}}</li>
+        <li>Frames per PP: {{FpPP_mod(weaponspec.atk1_hitcount, weaponspec.atk2_hitcount, weaponspec.atk3_hitcount) | number:'.2-2'}}</li>
+      </ul>
+    </md-card-content>
+  </md-card>
   </div>
   <div id="option">
-    <h2 li>OPTION</h2>
+    <md-card>
+    <md-card-header>
+      <md-card-title>
+        <h2 li>OPTION</h2>
+      </md-card-title>
+    </md-card-header>
+    <md-card-content>
     <ul>
       <li>
         <md-input-container>
@@ -35,22 +49,61 @@
         </md-input-container>
       </li>
     </ul>
+    </md-card-content>
+    </md-card>
+  </div>
+  <div id="index_ndps">
+    <md-card>
+      <h2><md-chip color="accent" selected="true">Net DPS</md-chip></h2>
+      <li *ngFor="let weapon of weapons; let idx = index;">
+        <ul>
+          <li style="text-align: left">
+             {{weapon.name_photonart}}
+          </li>
+          <li style="text-align: right">
+              {{netDPS(idx) | number:'.2-2'}}
+          </li>
+        </ul>
+      </li>
+    </md-card>
+  </div>
+  <div id="index_gdps_mod">
+    <md-card>
+      <h2><md-chip color="primary" selected="true">modified Gross DPS</md-chip></h2>
+      <li *ngFor="let weapon of weapons; let idx = index;">
+        <ul>
+          <li style="text-align: left">
+            {{weapon.name_photonart}}
+          </li>
+          <li style="text-align: right">
+            {{grossDPS_mod(idx, weaponspec.atk1_hitcount, weaponspec.atk2_hitcount, weaponspec.atk3_hitcount) | number:'.2-2'}}
+          </li>
+        </ul>
+      </li>
+    </md-card>
   </div>
   <li *ngFor="let weapon of weapons; let idx = index;">
+    <div id="detail">
+    <md-card>
     <ul>
-      <h2><li>{{weapon.name_photonart}}</li></h2>
-      <li>Consumption: {{weapon.consumption}} modified <span style="font-weight: 700">{{Consumption(idx) | number:'.2-2'}}</span></li>
-      <li>Damage：{{weapon.damage | number:'.2-2'}}</li>
-      <li>Frames：{{weapon.frames}}</li>
-      <li>Net DPS: {{netDPS(idx) | number:'.2-2'}}</li>
-      <li>Gross DPS: {{grossDPS_base(idx) | number:'.2-2'}} modified
-        <span style="font-weight: 700">{{grossDPS_mod(idx, weaponspec.atk1_hitcount, weaponspec.atk2_hitcount, weaponspec.atk3_hitcount) | number:'.2-2'}}
-           -
-            <md-chip color="primary"selected="true">
-              {{Up_rate_grossDPS(idx, weaponspec.atk1_hitcount, weaponspec.atk2_hitcount, weaponspec.atk3_hitcount) | number:'.2-2'}} % Damage UP
-            </md-chip>
-          </span>
-      </li>
+      <md-card-header>
+        <md-card-title>
+        <h2><li>{{weapon.name_photonart}}</li></h2>
+        </md-card-title>
+      </md-card-header>
+      <md-card-content>
+        <li>Consumption: {{weapon.consumption}} modified <span style="font-weight: 700">{{Consumption(idx) | number:'.2-2'}}</span></li>
+        <li>Damage：{{weapon.damage | number:'.2-2'}}</li>
+        <li>Frames：{{weapon.frames}}</li>
+        <li><md-chip color="accent" selected="true">Net DPS:</md-chip> {{netDPS(idx) | number:'.2-2'}}</li>
+        <li><md-chip color="primary" selected="true">Gross DPS:</md-chip> {{grossDPS_base(idx) | number:'.2-2'}}</li>
+        <li class="g_dps_mod">→ modified {{grossDPS_mod(idx, weaponspec.atk1_hitcount, weaponspec.atk2_hitcount, weaponspec.atk3_hitcount) | number:'.2-2'}} - {{Up_rate_grossDPS(idx, weaponspec.atk1_hitcount, weaponspec.atk2_hitcount, weaponspec.atk3_hitcount) | number:'.2-2'}} % Damage UP</li>
+      </md-card-content>
     </ul>
+    </md-card>
+    </div>
   </li>
 </ul>
+<div id="nav_button">
+<button md-fab>+</button>
+</div>

@@ -1,7 +1,11 @@
-.content{
+body{
   animation: fadeIn 1s ease;
 }
 @keyframes fadeIn {
   0% {opacity: 0}
   100% {opacity: 1}
+}
+
+#title{
+  margin: 1.6rem 1.2rem;
 }

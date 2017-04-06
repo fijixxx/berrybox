@@ -5,3 +5,19 @@ ul{
   0% {opacity: 0}
   100% {opacity: 1}
 }
+
+#spec, #option, #index_ndps, #index_gdps_mod, #detail{
+  margin: 1.6rem 1.2rem;
+}
+
+#nav_button{
+  display: block;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+}
+
+.g_dps_mod{
+  font-weight: 700;
+}
