@@ -6,7 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
     <div>
       <p>{{name}}</p>
       <div style="display: block">
-        <canvas baseChart
+        <canvas width="500" height="80"
+                baseChart
                 [datasets]="barChartData"
                 [labels]="barChartLabels"
                 [options]="barChartOptions"
@@ -32,9 +33,10 @@ export class ChartingComponent implements OnInit {
   public barChartLabels:string[];
 
   public barChartOptions:any = {
-    scaleShowVerticalLines: false,
-    responsive: false
+    responsive: true,
+    scales: {xAxes: [{ticks: {min: 0, max: 2500}}]}
   };
+
   public barChartType:string = 'horizontalBar';
   public barChartLegend:boolean = false;
 
