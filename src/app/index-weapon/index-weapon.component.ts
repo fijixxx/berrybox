@@ -49,6 +49,7 @@ export class IndexWeaponComponent {
   //detail 表示用
   selectedWeapon;
 
+  //クリック対象をselectedWeapon化
   onSelect(index_weapon){
     this.selectedWeapon = index_weapon;
  }
