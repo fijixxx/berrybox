@@ -57,14 +57,17 @@
       <h2><md-chip color="accent" selected="true">Net DPS</md-chip></h2>
       <li *ngFor="let weapon of weapons; let idx = index;">
         <ul>
-          <li style="text-align: left">
+          <li style="text-align: left" id="ndps_name">
              {{weapon.name_photonart}}
           </li>
-          <li style="text-align: right">
+          <li style="text-align: right" id="ndps_damage">
               {{netDPS(idx) | number:'.2-2'}}
           </li>
         </ul>
       </li>
+      <div id="sort_ndps" style="text-align: center">
+        <button md-raised-button>Sort</button>
+      </div>
     </md-card>
   </div>
   <div id="index_gdps_mod">

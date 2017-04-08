@@ -100,4 +100,7 @@ export class DetailWeaponComponent {
   //総DPSの上昇率を計算
   Up_rate_grossDPS = (index:number, HitCount1, HitCount2, HitCount3) => (this.grossDPS_mod(index, HitCount1, HitCount2, HitCount3) - this.grossDPS_base(index)) / this.grossDPS_base(index) * 100;
 
+
+  //DPS一覧のソート
+
 }
