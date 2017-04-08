@@ -54,29 +54,11 @@
   </div>
   <div id="index_ndps">
     <md-card>
-      <h2><md-chip color="accent" selected="true">Net DPS</md-chip></h2>
+      <h2><md-chip color="accent" selected="true">Net DPS</md-chip> & <md-chip color="primary" selected="true">modified Gross DPS</md-chip></h2>
       <li *ngFor="let weapon of weapons; let idx = index;">
         <ul>
-          <li style="text-align: left" id="ndps_name">
-             {{weapon.name_photonart}}
-          </li>
-          <li style="text-align: right" id="ndps_damage">
-              {{netDPS(idx) | number:'.2-2'}}
-          </li>
-        </ul>
-      </li>
-    </md-card>
-  </div>
-  <div id="index_gdps_mod">
-    <md-card>
-      <h2><md-chip color="primary" selected="true">modified Gross DPS</md-chip></h2>
-      <li *ngFor="let weapon of weapons; let idx = index;">
-        <ul>
-          <li style="text-align: left">
-            {{weapon.name_photonart}}
-          </li>
-          <li style="text-align: right">
-            {{grossDPS_mod(idx, weaponspec.atk1_hitcount, weaponspec.atk2_hitcount, weaponspec.atk3_hitcount) | number:'.2-2'}}
+          <li>
+            <app-charting [name]="weapon.name_photonart" [nDPS]="netDPS(idx)" [gDPS]="grossDPS_mod(idx, weaponspec.atk1_hitcount, weaponspec.atk2_hitcount, weaponspec.atk3_hitcount)"></app-charting>
           </li>
         </ul>
       </li>

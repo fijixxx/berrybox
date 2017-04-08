@@ -5,22 +5,26 @@ import { HttpModule } from '@angular/http';
 
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
+import { ChartsModule } from "ng2-charts";
 
 import { AppComponent } from './app.component';
 import { IndexWeaponComponent } from './index-weapon/index-weapon.component';
 import { DetailWeaponComponent } from './detail-weapon/detail-weapon.component';
+import { ChartingComponent } from './charting/charting.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IndexWeaponComponent,
-    DetailWeaponComponent
+    DetailWeaponComponent,
+    ChartingComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule
+    MaterialModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
